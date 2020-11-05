@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 10 - Exercicio 04</title>
+    </head>
+    <body>
+        <header>
+            <h1>Lista 10 - Exercicio 04</h1>
+            <h2>jogo de advinhação</h2>
+        </header>
+        <main>
+            <Section>
+                <div>
+                    <label for="idNumber">Adivinhe o Número: </label>
+                    <input type="number" id="idNumber" name="nmNumber">
+
+                    <br><br>
+                    <output id="idSaida" name="nmSaida"></output>
+                    <br><br>
+                    <input type="submit" onclick="testarNum()">
+                </div>
+            </Section>
+        </main>
+        <Script>
+
+            var numberOculto = (Math.random() * 10).toFixed(0); 
+            
+            var tentativa = 1; 
+
+            var respostCerta = false;
+
+            function testarNum(){
+                let number = Number(document.getElementById("idNumber").value); 
+                let mensagem = ""; 
+
+                if ((tentativa < 4)) {
+
+                    if (respostCerta == false) {
+                        tentativa++; 
+               
+                        if (number == numberOculto) {
+                            mensagem = "Parabéns! vc acertou! ";
+                            respostCerta = true; 
+                        }else if(number < numberOculto){
+                            mensagem = "O número que vc escolheu é menor do que o número certo";
+                        }else { 
+                            mensagem = "O número que vc escolheu é maior do que o número certo";
+                        }                       
+                    }
+
+                }else{
+                    mensagem = "VOCÊ ATINGIU O NÚMEROS DE TENTATIVAS, TENTE NOVAMENTE !!"; 
+                }
+                document.getElementById("idSaida").value = mensagem; 
+            }
+
+        </Script>
+    </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 10 - Exercício 06</title>
+    </head>
+    <body>
+        <header>
+            <h1>Lista 10 - Exercicio 06</h1>
+            <h2>conversão de temperaturas</h2>
+        </header>
+        <main>
+            <Section>
+                <div>
+                    <label for="idTemperatura">Temperatura: </label>
+                    <input type="number" id="idTemperatura" name="nmTemperatura">
+                    <br><br>
+
+                    <p><b>Escala de Entrada</b></p>
+                    <label for="idCelsiusEntrad">Celsius </label>
+                    <input type="radio" id="idCelsiusEntrad" name="nmTempEntrad">
+                    <br>
+
+                    <label for="idFahEntrad">Fahrenheit </label>
+                    <input type="radio" id="idFahEntrad" name="nmTempEntrad">
+                    <br>
+
+                    <label for="idKelvinEntrad">Kelvin</label>
+                    <input type="radio" id="idKelvinEntrad" name="nmTempEntrad">
+                    <br>
+
+                    <br>
+                    <p><b>Escala de Saída</b></p>
+                    <label for="idCelSaida">Celsius </label>
+                    <input type="radio" id="idCelSaida" name="nmTempSaida">
+                    <br>
+
+                    <label for="idFahSaida">Fahrenheit </label>
+                    <input type="radio" id="idFahSaida" name="nmTempSaida">
+                    <br>
+
+                    <label for="idKelSaida">Kelvin</label>
+                    <input type="radio" id="idKelSaida" name="nmTempSaida">
+                    <br>
+
+                    <output id="idSaida" name="nmSaida"></output>
+                    <br><br>
+                    <input type="submit" onclick="converterCelParaFah()">
+
+                </div>
+            </Section>
+        </main>
+        <Script>
+            function converterCelParaFah(){
+                let mensagem = ""; 
+                let tempSaida = 0;
+                let tempEntrad  = Number(document.getElementById("idTemperatura").value);
+                let celsiusEntrad = document.getElementById("idCelEntrad").checked;
+                let fahEntrad = document.getElementById("idFahEntrad").checked;
+                let kelvinEntrad = document.getElementById("idKelvinEntrad").checked; 
+
+                let celSaida = document.getElementById("idCelSaida").checked;
+                let fahSaida = document.getElementById("idFahSaida").checked;
+                let kelSaida = document.getElementById("idKelSaida").checked;                
+
+
+                if (CelsiusEntrada) {
+                    if (fahSaida) {
+                        tempSaida = (9 * tempEntrad + 160)/5;
+                        mensagem = "Fahrenheit: "; 
+                    }else if (kelSaida) {
+                        tempSaida = tempEntrad + 273; 
+                        mensagem = "Kelvin: ";
+                    }else{
+                        tempSaida = "";
+                        mensagem= "escalas iguais foram selecionadas";
+                    }
+                }else if(fahEntrad){
+                    if (celSaida) {
+                        tempSaida = ((tempEntrad * 5)-160)/9; 
+                        mensagem = "Celsius: ";
+                    }else if (kelSaida) {
+                        tempSaida = (((tempEntrad * 5)-160)/9) + 273; 
+                        mensagem = "Kelvin: ";
+                    }else{
+                        tempSaida = ""; 
+                        mensagem = "escalas iguais foram selecionadas";
+                    }
+                }else if(kelvinEntrad){
+                    if (celSaida) {
+                        tempSaida = tempEntrad - 273; 
+                        mensagem = "Celsius: "
+                    }else if (fahSaida) {
+                        let temperatura = tempIn - 273; 
+                        tempSaida =  ((9 * temperatura + 160)/5);  
+                        mensagem = "Fahrenheit: "
+                    }else{
+                        tempSaida = ""; 
+                        mensagem = "escalas iguais foram selecionadas";
+                    }                    
+                }
+
+                document.getElementById("idSaida").value = mensagem +  tempSaida; 
+
+
+            }
+
+        </Script>
+    </body>
+</html>

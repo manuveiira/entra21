@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ista 10 - Exercicio 08</title>
+    </head>
+    <body>
+        <header>
+            <h1>Lista 10 - Exercicio 08</h1>
+            <h2>área das formas geométricas</h2>
+        </header>
+        <main>
+            <Section>
+                <div>
+
+                    <br><br>
+                    <p><b>Area Geométrica</b></p>
+                    <input type="radio" id="idCir" name="nmForma" onclick="confCir()" checked>
+                    <label for="idCir">Circulo</label>
+
+                    <input type="radio" id="idRet" name="nmForma" onclick="confRet()">
+                    <label for="idRet">Retangulo </label>
+
+                    <input type="radio" id="idTriRet" name="nmForma" onclick="confTriRet()">
+                    <label for="idTriRet">Triangulo Retangulo</label>
+
+                    <input type="radio" id="idTriEq" name="nmForma" onclick="confTriEq()">
+                    <label for="idTriEq">Triangulo Equilátero</label>
+
+                 
+                    <br><br>
+
+                    <label for="idVal1" id="idLbVal1">Raio: </label>
+                    <input type="number" id="idVal1" name="nmVal1" step="0,01">
+
+                    <br><br>
+                    <label for="idVal2" id="idLbVal2" hidden>XXXX: </label>
+                    <input type="number" id="idVal2" name="nmVal2" step="0,01" hidden>
+
+
+                    <br>
+
+
+                    <br><br>
+                    <output id="idOut" name="nmOut"></output>
+                    <br><br>
+                    <input type="submit" onclick="calcularArea()" value="Calcular">
+
+                </div>
+            </Section>
+        </main>
+        <Script>
+
+            function confCir(){
+                document.getElementById("idLbVal2").hidden = true; 
+                document.getElementById("idVal2").hidden = true; 
+                
+                document.getElementById("idLbVal1").textContent = "Raio: "; 
+
+            }
+
+            function confRet(){
+                document.getElementById("idLbVal2").hidden = false; 
+                document.getElementById("idVal2").hidden = false;
+
+                document.getElementById("idLbVal1").textContent = "Base: "; 
+                document.getElementById("idLbVal2").textContent = "Altura: "; 
+
+            }
+
+            function confTriRet(){
+                document.getElementById("idLbVal2").hidden = false; 
+                document.getElementById("idVal2").hidden = false;
+
+                document.getElementById("idLbVal1").textContent = "Base: "; 
+                document.getElementById("idLbVal2").textContent = "Altura: "; 
+
+            }
+
+
+            function confTriEq(){
+                document.getElementById("idLbVal2").hidden = true; 
+                document.getElementById("idVal2").hidden = true;
+
+                document.getElementById("idLbVal1").textContent = "Lado: "; 
+     
+
+            }
+
+            function calcularArea(){
+             
+
+                document.getElementById("idOut").value = "Moeda Convertida: " + moedaOut; 
+
+
+            }
+
+        </Script>
+    </body>
+</html>

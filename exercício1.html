@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 10 - Exercicio 01</title>
+    </head>
+    <body>
+        <header>
+            <h1>Lista 10 - Exercicio 01</h1>
+            <h2>contagem de números pares</h2>
+        </header>
+        <main>
+            <Section>
+                <div>
+                    <label for="idNumber">Número: </label>
+                    <input type="number" id="idNumber" name="nmNumber">
+
+                    <input type="submit" onclick="contar()">
+
+                </div>
+            </Section>
+        </main>
+        <Script>
+            function contar(){
+                let number = Number(document.getElementById("idNumber").value); 
+
+                let contador = num; 
+                while(contador >= 0){
+                    if (contador % 2 == 0) {
+                        console.log("Contador " + contador); 
+                    }
+
+                    contador--; 
+                }
+            }
+
+        </Script>
+    </body>
+</html>

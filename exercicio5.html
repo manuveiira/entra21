@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 10 - Exercicio 05</title>
+    </head>
+    <body>
+        <header>
+            <h1>Lista 10 - Exercicio 05</h1>
+            <h2>conversão de celcius para fahrenheit</h2>
+        </header>
+        <main>
+            <Section>
+                <div>
+                    <label for="idGrausCel">Graus Celsius: </label>
+                    <input type="number" id="idGrausCel" name="nmGrausCel">
+                    <br><br>
+                    <output id="idSaida" name="nmSaida"></output>
+                    <br><br>
+                    <input type="submit" onclick="converter()">
+
+                </div>
+            </Section>
+        </main>
+        <Script>
+            function converter(){
+                let grausCel = Number(document.getElementById("idGrausCel").value); 
+                let grausFah; 
+
+                grausFah = (9 * grausCel + 160)/5;
+
+                document.getElementById("idOut").value = "Fahrenheit: " + grausFah; 
+
+            }
+
+        </Script>
+    </body>
+</html>

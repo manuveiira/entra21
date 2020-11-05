@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 10 - Exercicio 07</title>
+    </head>
+    <body>
+        <header>
+            <h1>Lista 10 - Exercicio 07</h1>
+            <h2>conversão de moedas</h2>
+        </header>
+        <main>
+            <Section>
+                <div>
+                    <label for="idValor">Valor: </label>
+                    <input type="number" id="idVal" name="nmValor" step="0,01">
+
+                    <br><br>
+                    <p><b>Moeda de Entrada</b></p>
+
+                    <label for="idRealEntrad">Real</label>
+                    <input type="radio" id="idRealEntrad" name="nmModeaEntrad">
+
+                    <label for="idDolAEntrad">Dolar Americano </label>
+                    <input type="radio" id="idDolarAEntrad" name="nmModeaEntrad">
+
+                    <label for="idEuroEntrad">Euro</label>
+                    <input type="radio" id="idEuroEntrad" name="nmModeaEntrad">
+
+                    <label for="idLibraEntrada">Libra Esterlina</label>
+                    <input type="radio" id="idLibraEntrada" name="nmModeaEntrad">
+
+                    <label for="idDolCEntrada">Dolar Canadense</label>   
+                    <input type="radio" id="idDolCEntrada" name="nmModeaEntrad">                
+                    <br>
+
+                    <br>
+                    <p><b>Moeda de Saída</b></p>
+
+                    <label for="idRealSaida">Real</label>
+                    <input type="radio" id="idRealSaida" name="nmModeaSaida">
+
+                    <label for="idDolarASaida">Dolar Americano </label>
+                    <input type="radio" id="idDolarASaida" name="nmModeaSaida">
+
+                    <label for="idEuroSaida">Euro</label>
+                    <input type="radio" id="idEuroSaida" name="nmModeaSaida">
+
+                    <label for="idLibraSaida">Libra Esterlina</label>
+                    <input type="radio" id="idLibraSaida" name="nmModeaSaida">
+
+                    <label for="idDolarSaida">Dolar Canadense</label>    
+                    <input type="radio" id="idDolarCSaida" name="nmModeaOut">               
+                    <br>
+
+                   
+                    <br><br>
+                    <input type="submit" onclick="converterMoeda()">
+                    <output id="idSaida" name="nmSaida"></output>
+
+                </div>
+            </Section>
+        </main>
+        <Script>
+            var cotacaoReal   = 5.54; 
+            var cotacaoEuro   = 0.86;
+            var cotacaoLibra  = 0.78;
+            var cotacaoDolarC = 1.34; 
+
+
+            function converterMoeda(){
+                let valorDolar = 0; 
+                let moedaEntrad = Number(document.getElementById("idValor").value);
+                let realEntrad = document.getElementById("idRealEntrad").checked; 
+                let dolarAEntrad = document.getElementById("idDolarAEntrad").checked; 
+                let euroEntrad      = document.getElementById("idEuroEntrad").checked; 
+                let libraEntrad     = document.getElementById("idLibraEntard").checked; 
+                let dolarCEntrad  = document.getElementById("idDolarCEntrad").checked; 
+
+                let realSaida      = document.getElementById("idRealSaida").checked; 
+                let dolarASaida  = document.getElementById("idDolarASaida").checked; 
+                let euroSaida      = document.getElementById("idEuroSaida").checked; 
+                let libraSaida    = document.getElementById("idLibraSaida").checked; 
+                let dolarCSaida  = document.getElementById("idDolarCSaida").checked; 
+
+
+                //Converter de MoedaIn para DolarAmericano
+
+                if (realEntrad) {
+                    valorDolar = moedaEntrad/cotacaoReal; 
+                }else if(euroEntrad){
+                    valorDolar = moedaEntrad/cotacaoEuro;
+                }else if(libraEntrad){
+                    valorDolar = moedaEntrad/cotacaoLibra;
+                }else if(dolarCEntrad){
+                    valorDolar = moedaEntrad/cotacaoDolarC;
+                }else if(ehDolarAmeIn){
+                    valorDolar = moedaEntrad; 
+                }
+
+
+                //Converter de DolarAmericano para MoedaOut
+
+                if (realSaida) {
+                    moedaSaida  = valorDolar * cotacaoReal; 
+                }else if(euroSaida){
+                    moedaSaida  = valorDolar * cotacaoEuro; 
+                }else if(libraSaida){
+                    moedaSaida = valorDolar * cotacaoLibra; 
+                }else if(dolarCSaida){
+                    moedaSaida  = valorDolar * cotacaoDolarC; 
+                }else if(dolarASaida){
+                    moedaSaida = valorDolar; 
+                }
+
+
+                document.getElementById("idSaida").value = "Moeda Convertida: " + moedaSaida; 
+
+
+            }
+
+        </Script>
+    </body>
+</html>

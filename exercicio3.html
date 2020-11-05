@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista 10 - Exercicio 03</title>
+    </head>
+    <body>
+        <header>
+            <h1>Lista 10 - Exercicio 03</h1>
+            <h2>contagem de números pares e ímpares</h2>
+        </header>
+        <main>
+            <Section>
+                <div>
+                    <label for="idNumber">Número: </label>
+                    <input type="number" id="idNumber" name="nmNumber">
+                    <br><br>
+
+                    <label for="idNumPar">Par </label>
+                    <input type="radio" id="idNumPar" name="nmNumPar">
+                    <br><br>
+
+                    <label for="idNumImpar">Impar </label>
+                    <input type="radio" id="idNumImpar" name="nmNumImpar">
+
+                    <br><br>
+                    <input type="submit" onclick="contar()">
+
+                </div>
+            </Section>
+        </main>
+        <Script>
+            function contar(){
+                let number     = Number(document.getElementById("idNumber").value); 
+                let Par   = document.getElementById("idNumPar").checked; 
+                let Impar = document.getElementById("idNumImpar").checked;
+                
+                
+                for (let index = number; index >= 0; index--) {
+                    
+                    if (Par) {
+                        if (index % 2 == 0) {
+                            console.log("contador: " + index);
+                        }                       
+                    }
+
+                    if (Impar) {
+                        if (index % 2 != 0) {
+                            console.log("contador: " + index);
+                        }                          
+                    }
+
+                    
+                    
+                }
+            }
+
+        </Script>
+    </body>
+</html>
